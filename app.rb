@@ -95,15 +95,14 @@ post '/visit' do
 		)
 		values ( ?, ?, ?, ?, ? )', [@username, @phone, @datetime, @barber, @color]
 
-	@title = 'Thank you!'
 
-	@message = "Dear #{@username}, we'll be waiting for you #{@datetime}"
+	erb "<h2>Спасибо, вы записались!</h2>"
 
-	f  = File.open './public/users.txt' , 'a'
-	f.write "User: #{@username}, Phone: #{@phone} , Date and time: #{@datetime}, Barber: #{@barber}, #{@color} ;     "
-	f.close
+	# f  = File.open './public/users.txt' , 'a'
+	# f.write "User: #{@username}, Phone: #{@phone} , Date and time: #{@datetime}, Barber: #{@barber}, #{@color} ;     "
+	# f.close
 
-	erb :message
+	# erb :message
 end
 
 post '/contacts' do
